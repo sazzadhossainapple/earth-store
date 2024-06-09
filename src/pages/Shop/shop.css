@@ -1,0 +1,9 @@
+.shop-contaner {
+    padding-top: 9rem;
+    padding-bottom: 5rem;
+}
+.shop-title {
+    margin-bottom: 1em;
+    font-weight: 400;
+    color: var(--secondary-color);
+}

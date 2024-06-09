@@ -1,0 +1,104 @@
+.nav-header {
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    z-index: 100000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-logo {
+    max-width: 200px;
+}
+.nav-contnet {
+    display: flex;
+    align-items: center;
+    column-gap: 34px;
+}
+.nav-content-item {
+    list-style: none;
+}
+.nav-content-link {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+.nav-link-active {
+    color: var(--primary-color);
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+.nav-content-link:hover {
+    color: var(--primary-color);
+}
+.header-icon-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+}
+.header-icon {
+    font-size: 30px;
+    color: #000000;
+}
+.count-number {
+    background-color: #000000;
+    color: #fff;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    right: -14px;
+    top: -9px;
+}
+
+.scorll-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100000;
+    transition: top 0.5s ease-in-out;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eaeaea;
+}
+.dropdown-content {
+    background-color: var(--secondary-color);
+    right: 0;
+    top: 4rem;
+    width: 150px;
+    color: #fff;
+}
+.dropdown-content > li {
+    list-style: none !important;
+}
+
+.submenu-link {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px !important;
+}
+.dropdown-content > li:hover {
+    background-color: var(--primary-color);
+    transition: all 0.3s;
+}

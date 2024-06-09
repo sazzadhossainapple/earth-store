@@ -1,0 +1,18 @@
+.post-card-container {
+  background-image: url("../../../assets/Bg/Talk-to-us.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  object-fit: cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 0;
+}
+.post-card-small-text {
+  color: #585858;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 25px;
+  margin-top: 16px !important;
+}
