@@ -1,7 +1,23 @@
 .login-container {
-    padding-top: 10rem;
-    padding-bottom: 6rem;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.eye-icon {
+  font-size: 22px;
+  position: absolute;
+  top: 0.8rem;
+  color: var(--secondary-color);
+  right: 12px;
+}
+.error-text {
+  font-size: 14px;
+}
+.login-text {
+  color: #000 !important;
+}
+.sign-text {
+  color: var(--secondary-color) !important;
 }
