@@ -1,0 +1,17 @@
+.custom-offcanvas {
+  z-index: 1000000 !important;
+  position: relative;
+}
+.offcanvas-title {
+  color: var(--secondary-color) !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+}
+
+.shop-gird {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 70vh;
+  overflow: auto;
+}
