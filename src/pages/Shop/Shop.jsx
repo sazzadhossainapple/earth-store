@@ -1,5 +1,6 @@
 import React from 'react';
 import './shop.css';
+import '../Home/Product/product.css';
 import Img1 from '../../assets/product/Poster1.jpg';
 import Img2 from '../../assets/product/Poster2.jpg';
 import Img3 from '../../assets/product/Poster3.jpg';
