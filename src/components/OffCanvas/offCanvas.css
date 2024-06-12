@@ -11,7 +11,70 @@
 .shop-gird {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  height: 70vh;
+  gap: 15px;
+  height: 65vh;
   overflow: auto;
+  padding-bottom: 3.8rem;
+}
+.shop-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 15px;
+}
+.shop-card:last-child {
+  border-bottom: none;
+}
+.shop-img {
+  height: 4em;
+  width: 4.5em;
+  object-fit: cover;
+}
+.shop-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.shop-content-text h3 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 6px !important;
+}
+.shop-content-text p {
+  color: #585858;
+  font-size: 16px;
+  font-weight: 500;
+}
+.delete-btn {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  font-size: 16px;
+  color: var(--secondary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 20px;
+}
+.delete-btn:hover {
+  color: #fff;
+  background-color: var(--secondary-color);
+}
+.cart-content {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.cart-content h3 {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+.cart-content p {
+  color: #212529;
+  font-size: 16px;
+  font-weight: 500;
 }
