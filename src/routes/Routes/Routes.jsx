@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
+const Cart = lazy(() => import('../../pages/Cart/Cart'));
 const Main = lazy(() => import('../../layout/Main/Main'));
 const Home = lazy(() => import('../../pages/Home/Home'));
 const Contact = lazy(() => import('../../pages/Contact/Contact'));
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
             { path: '/contact', element: <Contact /> },
             { path: '/about', element: <About /> },
             { path: '/shop', element: <Shop /> },
+            { path: '/cart', element: <Cart /> },
             { path: '/sign-in', element: <Login /> },
             { path: '/sign-up', element: <Register /> },
         ].map((route) => ({

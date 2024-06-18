@@ -1,6 +1,4 @@
 import React from 'react';
-import '../contact.css';
-
 const Banner = () => {
     return (
         <div className="contant-banner-container">

@@ -1,0 +1,120 @@
+.banner-bg {
+    background-image: url('../../assets/banner/Banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 250px 0;
+}
+
+/* post card css start */
+
+.post-card-container {
+    background-image: url('../../assets/Bg/Talk-to-us.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 0;
+}
+.post-card-small-text {
+    color: #585858;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-top: 16px !important;
+}
+
+/* post card css end */
+
+/* product css start */
+.product-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.product-gird {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* product css end */
+
+/* review css start */
+.review-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-top: 1px solid #eae9ec;
+}
+.review-gird {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+}
+/* review css end */
+
+/* secure css start */
+.secure-container {
+    padding: 4rem 0rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    align-items: center;
+}
+/* secure css end */
+
+/* media query css start small device */
+@media only screen and (min-width: 250px) and (max-width: 575px) {
+    .product-gird {
+        grid-template-columns: 1fr;
+    }
+    .review-gird {
+        grid-template-columns: 1fr;
+    }
+    .secure-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .product-gird {
+        grid-template-columns: 1fr 1fr;
+    }
+    .review-gird {
+        grid-template-columns: 1fr;
+    }
+    .secure-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .product-gird {
+        grid-template-columns: 1fr 1fr;
+    }
+    .review-gird {
+        grid-template-columns: 1fr;
+    }
+    .secure-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .product-gird {
+        grid-template-columns: 1fr 1fr;
+    }
+    .review-gird {
+        grid-template-columns: 1fr 1fr;
+    }
+    .secure-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
