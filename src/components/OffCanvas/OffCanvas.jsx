@@ -121,7 +121,7 @@ const OffCanvas = ({ show, handleClose }) => {
                                         View Cart
                                     </Link>
                                     <Link
-                                        to=""
+                                        to="/checkout"
                                         onClick={handleClose}
                                         className="text-text-center btns w-100 d-inline-block text-center"
                                     >
