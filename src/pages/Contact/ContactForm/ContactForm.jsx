@@ -1,5 +1,4 @@
 import React from 'react';
-import '../contact.css';
 import { MdEmail, MdLocalPhone, MdLocationOn } from 'react-icons/md';
 import {
     FaFacebookF,

@@ -1,5 +1,4 @@
 import React from "react";
-import "./secureAndCare.css";
 import SecureCard from "../../../components/SecureCard/SecureCard";
 import { FaBox, FaLock, FaHandHoldingHeart } from "react-icons/fa";
 
