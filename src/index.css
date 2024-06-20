@@ -104,6 +104,20 @@ a {
 }
 
 @media only screen and (min-width: 250px) and (max-width: 575px) {
+    .heading-title {
+        font-size: 40px;
+    }
+    .second-title,
+    .text-title {
+        font-size: 1.5rem;
+    }
+    .small-heading-title {
+        font-size: 20px;
+    }
+    .shop-contaner {
+        padding-top: 9rem;
+        padding-bottom: 3rem;
+    }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 }

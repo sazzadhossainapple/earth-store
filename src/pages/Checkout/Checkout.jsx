@@ -152,7 +152,7 @@ const Checkout = () => {
                             Additional information
                         </h3>
                         <hr />
-                        <div className="mb-4">
+                        <div className="">
                             <label htmlFor="" className="lable-text mb-2">
                                 <span>Order notes (optional)</span>
                             </label>
