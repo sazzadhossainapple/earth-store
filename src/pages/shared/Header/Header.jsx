@@ -3,13 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 import './header.css';
 import Logo from '../../../assets/logo/earth_store_logo.png';
 import { GiShoppingBag } from 'react-icons/gi';
-import { MdPeopleAlt, MdPeople } from 'react-icons/md';
+import { MdPeopleAlt, MdPeople, MdMenu } from 'react-icons/md';
 import { FaSignInAlt } from 'react-icons/fa';
 
 import OffCanvas from '../../../components/OffCanvas/OffCanvas';
 
 const Header = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [isNavVisible, setIsNavVisible] = useState(false);
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
     const dropdownRef = useRef(null);
     const [showOffcanvas, setShowOffcanvas] = useState(false);
@@ -31,7 +32,6 @@ const Header = () => {
     }, []);
 
     // dropdow
-
     const handleButtonClick = () => {
         setIsDropdownVisible(!isDropdownVisible);
     };
@@ -52,6 +52,11 @@ const Header = () => {
         };
     }, []);
 
+    // Menu toggle
+    const handleMenuToggle = () => {
+        setIsNavVisible(!isNavVisible);
+    };
+
     return (
         <header className="position-relative">
             <div className={isVisible ? 'scorll-nav' : 'nav-header'}>
@@ -64,7 +69,14 @@ const Header = () => {
                         />
                     </Link>
 
-                    <ul className="nav-contnet">
+                    <button
+                        className="d-block d-lg-none border-0 bg-transparent"
+                        // onClick={handleMenuToggle}
+                    >
+                        <MdMenu className="menu-icon" />
+                    </button>
+
+                    <ul className={`nav-contnet`}>
                         <li className="nav-content-item">
                             <NavLink
                                 to="/"
