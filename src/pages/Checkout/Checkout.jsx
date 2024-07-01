@@ -33,7 +33,7 @@ const Checkout = () => {
     };
     return (
         <div className="shop-contaner container">
-            <h1 class="shop-title">Checkout</h1>
+            <h1 className="shop-title">Checkout</h1>
 
             <form
                 className="mt-5 checkout-content"
@@ -171,7 +171,7 @@ const Checkout = () => {
                         <h3 className="checkout-title">Your order</h3>
 
                         <div className="mt-4">
-                            <table class="table">
+                            <table className="table">
                                 <thead>
                                     <tr>
                                         <th className="table-th align-middle px-0">

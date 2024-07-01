@@ -33,7 +33,7 @@ const Cart = () => {
         <div className="shop-contaner container">
             <h1 class="shop-title">Cart</h1>
             <div className="mt-5 table-responsive">
-                <table class="table border">
+                <table className="table border">
                     <thead>
                         <tr>
                             <th
@@ -80,7 +80,7 @@ const Cart = () => {
                                 </td>
                                 <td className="table-td align-middle">
                                     <Link to="">
-                                        <div class="shop-img">
+                                        <div className="shop-img">
                                             <img
                                                 src={data?.product_img}
                                                 alt={data?.prodcut_title}
@@ -123,7 +123,7 @@ const Cart = () => {
             </div>
 
             <div className="mt-4 table-width">
-                <table class="table border">
+                <table className="table border">
                     <thead>
                         <tr>
                             <th

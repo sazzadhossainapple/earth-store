@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         <div className="contant-banner-container">
             <div className="container">
-                <h1 class="heading-title text-center">CONTACT US</h1>
+                <h1 className="heading-title text-center">CONTACT US</h1>
             </div>
         </div>
     );

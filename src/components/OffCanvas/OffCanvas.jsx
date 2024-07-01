@@ -62,7 +62,7 @@ const OffCanvas = ({ show, handleClose }) => {
                             </p>
                         ) : (
                             productSelect?.map((data) => (
-                                <div className="shop-card">
+                                <div key={data.id} className="shop-card">
                                     <div className="d-flex align-items-center gap-3">
                                         <div className="shop-img">
                                             <img
