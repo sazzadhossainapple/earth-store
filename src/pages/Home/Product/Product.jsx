@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ProductCard from '../../../components/ProductCard/ProductCard';
 import Img1 from '../../../assets/product/Poster1.jpg';
 import Img2 from '../../../assets/product/Poster2.jpg';
 import Img3 from '../../../assets/product/Poster3.jpg';
+import { AddCartContext } from '../../../context/cartContext/CartContext';
 
 const product = [
     {
@@ -26,11 +27,16 @@ const product = [
 ];
 
 const Product = () => {
+    const { addToCart } = useContext(AddCartContext);
     return (
         <div className="product-container">
             <div className="container product-gird">
                 {product?.map((data) => (
-                    <ProductCard key={data?._id} data={data} />
+                    <ProductCard
+                        key={data?._id}
+                        data={data}
+                        addToCart={addToCart}
+                    />
                 ))}
             </div>
         </div>
