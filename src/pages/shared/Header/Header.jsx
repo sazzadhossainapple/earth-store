@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './header.css';
 import Logo from '../../../assets/logo/earth_store_logo.png';
@@ -7,6 +7,7 @@ import { MdPeopleAlt, MdPeople, MdMenu } from 'react-icons/md';
 import { FaSignInAlt } from 'react-icons/fa';
 
 import OffCanvas from '../../../components/OffCanvas/OffCanvas';
+import { AddCartContext } from '../../../context/cartContext/CartContext';
 
 const Header = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -14,6 +15,8 @@ const Header = () => {
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
     const dropdownRef = useRef(null);
     const [showOffcanvas, setShowOffcanvas] = useState(false);
+
+    const { totalItemsInCart } = useContext(AddCartContext);
 
     const handleCloseOffcanvas = () => setShowOffcanvas(false);
     const handleShowOffcanvas = () => setShowOffcanvas(true);
@@ -132,7 +135,9 @@ const Header = () => {
                                     onClick={handleShowOffcanvas}
                                 >
                                     <GiShoppingBag className="header-icon bag-icon" />
-                                    <span className="count-number">0</span>
+                                    <span className="count-number">
+                                        {totalItemsInCart}
+                                    </span>
                                 </button>
                                 <div
                                     className="position-relative"

@@ -59,7 +59,7 @@ const ContactForm = () => {
                 </form>
             </div>
             <div className="contact-form-right">
-                <h3 class="contact-title">Talk To Us</h3>
+                <h3 className="contact-title">Talk To Us</h3>
                 <div className="d-flex gap-3 contact-info mb-5">
                     <div className="contact-icon">
                         <MdEmail />

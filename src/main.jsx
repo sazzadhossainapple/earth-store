@@ -8,9 +8,12 @@ import './customCSS/homePage/home.css';
 import './customCSS/loginPage/login.css';
 import './customCSS/cartPage/cart.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartContext from './context/cartContext/CartContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <App />
+        <CartContext>
+            <App />
+        </CartContext>
     </React.StrictMode>
 );
