@@ -22,7 +22,7 @@ const ProductCard = ({ data, addToCart }) => {
     return (
         <div>
             <div className="position-relative">
-                <Link to="">
+                <Link to="/product-details">
                     <div className="product-img">
                         <img
                             src={product_img ? product_img : Img1}

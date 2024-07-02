@@ -1,0 +1,120 @@
+.shop-detials-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+}
+.shop-detials-left {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.thumbnailsBox {
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.5s;
+}
+
+.thumbnailsBox.active {
+    opacity: 1;
+    border: 2px solid #2c541d;
+}
+
+.thumbnailsBox img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mainImage {
+    overflow: hidden;
+    width: 100%;
+    height: 444px;
+    cursor: crosshair;
+}
+
+.mainImage img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.shop-detials-right {
+    width: 50%;
+}
+
+.shop-details-poster {
+    color: #74a84a;
+    line-height: 1;
+    margin-bottom: 1em !important;
+    font-size: 18px;
+}
+.product-details-title {
+    color: #000;
+    font-family: 'Jost', sans-serif;
+    line-height: 38px;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0 0 0.5em 0 !important;
+}
+.product-details-price {
+    color: #585858;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.4em !important;
+}
+.product-text {
+    color: #585858;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 20px !important;
+}
+
+/* media query css start small device */
+
+@media only screen and (min-width: 250px) and (max-width: 575px) {
+    .shop-detials-container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .shop-detials-left {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .thumbnails {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+    .shop-detials-right {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}

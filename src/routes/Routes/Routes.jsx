@@ -9,6 +9,7 @@ const Contact = lazy(() => import('../../pages/Contact/Contact'));
 const ErrorPage = lazy(() => import('../../pages/ErrorPage/ErrorPage'));
 const About = lazy(() => import('../../pages/About/About'));
 const Shop = lazy(() => import('../../pages/Shop/Shop'));
+const ShopDetails = lazy(() => import('../../pages/ShopDetails/ShopDetails'));
 const Login = lazy(() => import('../../pages/Login/Login'));
 const Register = lazy(() => import('../../pages/Register/Register'));
 
@@ -34,6 +35,17 @@ export const router = createBrowserRouter([
             { path: '/checkout', element: <Checkout /> },
             { path: '/sign-in', element: <Login /> },
             { path: '/sign-up', element: <Register /> },
+            { path: '/product-details', element: <ShopDetails  /> },
+
+            // {
+            //     path: '/product-details/:id',
+            //     element: <ShopDetails />,
+            //     loader: ({ params }) =>
+            //         fetch(
+            //             `${import.meta.env.VITE_API_KEY_URL}/api/v1/news/${params.id}`
+            //         ),
+            // },
+
         ].map((route) => ({
             ...route,
             element: (
