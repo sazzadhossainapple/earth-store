@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Img1 from '../../assets/product/Poster1.jpg';
 import Img2 from '../../assets/product/Poster2.jpg';
 import Img3 from '../../assets/product/Poster3.jpg';
@@ -6,6 +6,9 @@ import Img4 from '../../assets/product/Poster4.jpg';
 import Img5 from '../../assets/product/Poster5.jpg';
 import { Link } from 'react-router-dom';
 import ShopMenu from './ShopMenu';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { AddCartContext } from '../../context/cartContext/CartContext';
+
 const ShopDetails = () => {
     const imageList = {
         _id: '1',
@@ -13,6 +16,29 @@ const ShopDetails = () => {
         product_img: [Img1, Img2, Img3, Img4],
         product_price: '23.99',
     };
+
+    const product = [
+        {
+            _id: '1',
+            prodcut_title: 'Poster V1',
+            product_img: Img1,
+            product_price: '23.99',
+        },
+        {
+            _id: '2',
+            prodcut_title: 'Poster V2',
+            product_img: Img2,
+            product_price: '17.99',
+        },
+        {
+            _id: '3',
+            prodcut_title: 'Poster V3',
+            product_img: Img3,
+            product_price: '14.99',
+        },
+    ];
+
+    const { addToCart } = useContext(AddCartContext);
 
     const [activeImage, setActiveImage] = useState(imageList?.product_img[0]);
     const [transformStyle, setTransformStyle] = useState({
@@ -103,6 +129,12 @@ const ShopDetails = () => {
             </div>
             <div className="container review-desc">
                 <h1 class="shop-title mt-0 text-black">Related products</h1>
+
+                <div className="related-product-grid product-gird">
+                    {product.map((data) => (
+                        <ProductCard data={data} addToCart={addToCart} />
+                    ))}
+                </div>
             </div>
         </>
     );

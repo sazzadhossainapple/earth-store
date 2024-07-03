@@ -172,6 +172,9 @@
     color: #74a84a;
     font-size: 16px;
 }
+.related-product-grid {
+    margin-top: 3rem;
+}
 
 /* media query css start small device */
 
