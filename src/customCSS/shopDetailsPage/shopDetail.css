@@ -85,6 +85,93 @@
     line-height: 28px;
     margin-bottom: 20px !important;
 }
+.review-desc {
+    margin-bottom: 6rem;
+}
+.shop-menu {
+    display: inline-block;
+    padding: 0.5em 0 0 0;
+    font-weight: 700;
+    color: #515151;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: transparent;
+    border-top: 3px solid transparent;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+.active-shop-menu {
+    border-top: 3px solid #74a84a;
+}
+.shop-details-desc {
+    margin-top: 1.5rem;
+}
+.shop-dec-title {
+    color: #515151;
+    font-size: 16px;
+}
+.shop-list-content li {
+    font-size: 16px;
+    color: #585858;
+    font-weight: 400;
+    margin-top: 6px;
+    margin-left: 17px;
+}
+.note-text {
+    font-size: 16px;
+    color: #585858;
+}
+.review-text {
+    font-size: 16px;
+    color: #585858;
+    font-weight: 400;
+}
+.review-card {
+    border: 1px solid #d9d9d9;
+    margin-top: 2rem;
+}
+.review-title-text {
+    font-size: 1.34rem;
+    line-height: 1.3;
+    font-weight: 500;
+    color: #585858;
+}
+.review-label {
+    color: #585858;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding-right: 0.5em;
+}
+.star-iocn {
+    color: #74a84a;
+    font-size: 1.2em;
+}
+.star-number {
+    font-size: 1.2em;
+    color: #585858;
+}
+.form-check-input:checked {
+    background-color: #74a84a !important;
+    border-color: #74a84a !important;
+}
+.form-check-input:focus {
+    border-color: transparent !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+.user-review-img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.star-iocn {
+    color: #74a84a;
+    font-size: 16px;
+}
 
 /* media query css start small device */
 
