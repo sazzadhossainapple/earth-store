@@ -5,6 +5,7 @@ import Img3 from '../../assets/product/Poster3.jpg';
 import Img4 from '../../assets/product/Poster4.jpg';
 import Img5 from '../../assets/product/Poster5.jpg';
 import { Link } from 'react-router-dom';
+import ShopMenu from './ShopMenu';
 const ShopDetails = () => {
     const imageList = {
         _id: '1',
@@ -46,47 +47,64 @@ const ShopDetails = () => {
         });
     };
     return (
-        <div className="container shop-detials-container">
-            <div className="shop-detials-left">
-                <div className="thumbnails">
-                    {imageList.product_img.map((image, index) => (
-                        <div
-                            key={index}
-                            className={`thumbnailsBox ${
-                                activeImage === image ? 'active' : ''
-                            }`}
-                            onClick={() => handleThumbnailClick(image)}
-                        >
-                            <img src={image} alt={`Thumbnail ${index + 1}`} />
-                        </div>
-                    ))}
+        <>
+            <div className="container shop-detials-container">
+                <div className="shop-detials-left">
+                    <div className="thumbnails">
+                        {imageList.product_img.map((image, index) => (
+                            <div
+                                key={index}
+                                className={`thumbnailsBox ${
+                                    activeImage === image ? 'active' : ''
+                                }`}
+                                onClick={() => handleThumbnailClick(image)}
+                            >
+                                <img
+                                    src={image}
+                                    alt={`Thumbnail ${index + 1}`}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <div
+                        className="mainImage"
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <img
+                            src={activeImage}
+                            alt="Main"
+                            style={transformStyle}
+                        />
+                    </div>
                 </div>
-                <div
-                    className="mainImage"
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <img src={activeImage} alt="Main" style={transformStyle} />
+                <div className="shop-detials-right">
+                    <p class="shop-details-poster">Posters</p>
+                    <h4 className="product-details-title">Postcard V1</h4>
+                    <h5 className="product-details-price">
+                        <span>$</span> <span>23.99</span>
+                    </h5>
+                    <p class="product-text">
+                        Sending a travel postcard to a loved one is truly a
+                        thoughtful gesture that can bring joy and inspiration.
+                        Inspiration can come in the form of taking a break from
+                        the normal routine, while being reminded of the more
+                        adventurous and exotic destinations around the world.
+                    </p>
+                    <Link to="/cart">
+                        <button className="btns">Add to cart</button>
+                    </Link>
                 </div>
             </div>
-            <div className="shop-detials-right">
-                <p class="shop-details-poster">Posters</p>
-                <h4 className="product-details-title">Postcard V1</h4>
-                <h5 className="product-details-price">
-                    <span>$</span> <span>23.99</span>
-                </h5>
-                <p class="product-text">
-                    Sending a travel postcard to a loved one is truly a
-                    thoughtful gesture that can bring joy and inspiration.
-                    Inspiration can come in the form of taking a break from the
-                    normal routine, while being reminded of the more adventurous
-                    and exotic destinations around the world.
-                </p>
-                <Link to="/cart">
-                    <button className="btns">Add to cart</button>
-                </Link>
+
+            <div className="container review-desc">
+                <hr style={{ margin: '0px' }} />
+                <ShopMenu />
             </div>
-        </div>
+            <div className="container review-desc">
+                <h1 class="shop-title mt-0 text-black">Related products</h1>
+            </div>
+        </>
     );
 };
 
