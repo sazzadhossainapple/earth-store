@@ -55,7 +55,7 @@ const Review = () => {
                                         <FaRegStar className="star-iocn" />
                                         <FaRegStar className="star-iocn" />
                                     </p>
-                                    <p className="review-text mt-1 ">
+                                    <p className="review-text text-margin">
                                         {data.desc}
                                     </p>
                                 </div>
