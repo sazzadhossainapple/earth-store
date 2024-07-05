@@ -1,222 +1,288 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .body {
-  background-color: #f6f7fb;
-  color: #888da8;
-  letter-spacing: 0.2px;
-  font-family: "Roboto", sans-serif;
-  padding: 0;
-  margin: 0;
-  height: 100vh;
+    background-color: #f6f7fb;
+    color: #888da8;
+    letter-spacing: 0.2px;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
 }
 
 #left-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 280px;
-  background-color: #2c541d;
-  overflow-y: auto;
-  height: 100vh;
-  border-right: 1px solid #e6ecf5;
-  margin-top: 60px;
-  transition: all 0.3s ease-in-out;
-  overflow-x: hidden;
-  z-index: 2;
-  scrollbar-width: thin;
-  scrollbar-color: #f2f2f2 #2c541d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    background-color: #2c541d;
+    overflow-y: auto;
+    height: 100vh;
+    border-right: 1px solid #e6ecf5;
+    margin-top: 60px;
+    transition: all 0.3s ease-in-out;
+    overflow-x: hidden;
+    z-index: 2;
+    scrollbar-width: thin;
+    scrollbar-color: #f2f2f2 #2c541d;
 }
 
 #left-menu.small-left-menu,
 #logo.small-left-menu {
-  width: 60px;
+    width: 60px;
 }
 
 #left-menu ul {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #left-menu ul li {
-  padding: 0 10px;
-  display: block;
-  position: relative;
+    padding: 0 10px;
+    display: block;
+    position: relative;
 }
 
 #left-menu > ul > li {
-  margin: 15px 0;
+    margin: 15px 0;
+    position: relative;
 }
 
 #left-menu ul li a {
-  color: #f2f2f2;
-  width: 100%;
-  display: inline-block;
-  width: 260px;
-  height: 37px;
-  position: relative;
-  text-decoration: none;
+    color: #c9c9c9;
+    width: 100%;
+    display: inline-block;
+    width: 260px;
+    /* height: 37px; */
+    /* position: relative; */
+    text-decoration: none;
 }
 
 #left-menu ul li a i {
-  font-size: 20px;
-  text-align: center;
-  width: 35px;
-  transition: all 0.3s ease;
+    font-size: 24px;
+    text-align: center;
+    width: 35px;
+    transition: all 0.3s ease;
 }
 
 #left-menu ul li:hover a span {
-  color: #0e9aee;
+    color: #fff;
 }
 
 #left-menu ul li:hover a i {
-  color: #0e9aee;
+    color: #fff;
+}
+#left-menu ul li:hover a .angle-color {
+    color: #fff;
 }
 
 #left-menu ul li a span {
-  width: 100%;
-  height: 35px;
-  padding-left: 10px;
-  color: #f2f2f2;
-  font-weight: 400;
-  transition: all 0.3s ease;
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    color: #c9c9c9;
+    font-weight: 400;
+    transition: all 0.3s ease;
 }
 
 #left-menu ul li.active a {
-  border-bottom: 2px solid #0e9aee;
+    border-bottom: 2px solid #0e9aee;
 }
 
 #left-menu ul li.active a span {
-  color: #fff;
+    color: #fff;
 }
 
 #left-menu ul li.active a i {
-  background-color: #0e9aee;
-  color: #fff;
+    background-color: #0e9aee;
+    color: #fff;
 }
 
 #left-menu li.has-sub ul {
-  background-color: #2c541d;
-  margin: 0 -10px;
-  padding-left: 45px;
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
+    background-color: #2c541d;
+    margin: 0 -10px;
+    padding-left: 45px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
 }
 
 #left-menu li ul.open {
-  height: auto;
-  padding: 10px 0;
-  opacity: 1;
+    height: auto;
+    padding: 10px 0;
+    opacity: 1;
 }
 
 #left-menu li.has-sub ul.open li {
-  padding-top: 10px;
-  margin-left: 20px;
+    padding-top: 12px;
+    margin-left: 25px;
 }
 
 #left-menu li.has-sub.rotate ul {
-  height: auto;
-  padding: 10px 0;
+    height: auto;
+    padding: 10px 0;
+}
+
+#left-menu ul li .submenus .submenu-texts:hover {
+    color: #fff;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
+}
+.submenu-texts:hover {
+    color: #fff;
 }
 
 #logo {
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  left: 0;
-  background-color: #74a84a;
-  border-color: #464e62;
-  height: 60px;
-  width: 280px;
-  font-size: 30px;
-  line-height: 2em;
-  border-right: 1px solid #e6ecf5;
-  z-index: 4;
-  color: #fff;
-  padding-left: 15px;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    left: 0;
+    background-color: #74a84a;
+    border-color: #464e62;
+    height: 60px;
+    width: 280px;
+    font-size: 30px;
+    line-height: 2em;
+    border-right: 1px solid #e6ecf5;
+    z-index: 4;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+.big-logo {
+    padding-left: 15px;
 }
 
 #header {
-  background-color: #fff;
-  height: 60px;
-  border-bottom: 1px solid #e6ecf5;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 3;
+    background-color: #fff;
+    height: 60px;
+    border-bottom: 1px solid #e6ecf5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
 }
 
 #header .header-left {
-  padding-left: 300px;
-  transition: all 0.3s ease-in-out;
+    padding-left: 300px;
+    transition: all 0.3s ease-in-out;
 }
 
 #header .header-right {
-  padding-right: 40px;
+    padding-right: 40px;
 }
 
 #header .header-right i,
 #header .header-left i {
-  font-size: 30px;
-  line-height: 2em;
-  padding: 0 5px;
-  cursor: pointer;
-  color: #2c541d;
+    font-size: 30px;
+    line-height: 2em;
+    padding: 0 5px;
+    cursor: pointer;
+    color: #2c541d;
 }
 
 #main-content {
-  min-height: calc(100vh - 60px);
-  clear: both;
+    min-height: calc(100vh - 60px);
+    clear: both;
 }
 
 #page-container {
-  padding-left: 300px;
-  padding-top: 80px;
-  padding-right: 25px;
-  transition: all 0.3s ease-in-out;
+    padding-left: 300px;
+    padding-top: 80px;
+    padding-right: 25px;
+    transition: all 0.3s ease-in-out;
 }
 
 #page-container.small-left-menu,
 #header .header-left.small-left-menu {
-  padding-left: 80px;
+    padding-left: 80px;
 }
 
 .card {
-  border: 1px solid #e6ecf5;
-  border-radius: 0;
-  padding: 25px;
-  margin-bottom: 25px;
-  background-color: #fff;
+    border: 1px solid #e6ecf5;
+    border-radius: 0;
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: #fff;
 }
 
 #toggle-left-menu {
-  padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 30px;
 }
 
 .small-logo {
-  display: none;
+    display: none;
 }
 
 .small-left-menu .small-logo {
-  display: inline-block;
-  padding-left: 20px;
-  line-height: 2.8em;
+    display: inline-block;
+    padding-left: 8px;
+    line-height: 0em;
 }
 
 .small-left-menu .big-logo {
-  display: none;
+    display: none;
 }
 
 #show-lable {
-  font-size: 40px;
-  font-weight: 800;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #2c541d;
+    color: #ffffff;
+    padding: 10px 15px;
+    position: absolute;
+    z-index: 1000;
+    white-space: nowrap;
+    left: 60px !important;
+    cursor: pointer;
+}
+
+#show-label {
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #2c541d;
+    color: #ffffff;
+    padding: 10px 15px;
+    position: absolute;
+    z-index: 1000;
+    white-space: nowrap;
+    left: 60px !important;
+    cursor: pointer;
+}
+
+#show-label > a {
+    color: #fff;
+}
+
+#show-label ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+}
+
+#show-label ul li {
+    background-color: #2c541d;
+    padding: 5px 10px;
+    color: #fff;
+    margin-top: 2px;
+}
+#show-label ul li a {
+    color: #fff;
+}
+
+/* media query css start small device */
+
+@media only screen and (min-width: 250px) and (max-width: 575px) {
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
 }
