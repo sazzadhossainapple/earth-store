@@ -175,6 +175,9 @@
 .related-product-grid {
     margin-top: 3rem;
 }
+.text-margin {
+    margin-top: 0.25rem !important;
+}
 
 /* media query css start small device */
 
