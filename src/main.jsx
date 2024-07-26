@@ -10,11 +10,13 @@ import './customCSS/cartPage/cart.css';
 import './customCSS/shopDetailsPage/shopDetail.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartContext from './context/cartContext/CartContext.jsx';
+import { Toaster } from 'react-hot-toast';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <CartContext>
             <App />
+            <Toaster />
         </CartContext>
     </React.StrictMode>
 );

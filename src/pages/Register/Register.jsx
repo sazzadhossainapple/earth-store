@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
@@ -10,9 +11,41 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
+    const [loading, setLoading] = useState(false);
+
     //register
     const onSubmit = (data) => {
-        console.log(data);
+        setLoading(true);
+
+        const addUser = {
+            name: data?.name,
+            email: data.email,
+            password: data?.password,
+        };
+
+        fetch(`${import.meta.env.VITE_API_KEY_URL}/api/user`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+            },
+            body: JSON.stringify(addUser),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data?.success) {
+                    console.log(data);
+                    toast.success('Account Created successfully');
+                    reset();
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                toast.error('Account not created!!');
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     };
 
     return (
@@ -50,7 +83,7 @@ const Register = () => {
                     </div>
                     <div className="mb-4">
                         <input
-                            type="password"
+                            type="text"
                             className="input-field"
                             {...register('password', { required: true })}
                             name="password"
@@ -67,7 +100,7 @@ const Register = () => {
                         <input
                             type="submit"
                             className="text-text-center btns w-100"
-                            value="Sign Up"
+                            value={`${loading ? 'Loading...' : 'Sign Up'}`}
                         />
                     </div>
                 </form>

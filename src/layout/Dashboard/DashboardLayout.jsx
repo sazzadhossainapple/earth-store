@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './dashboardLayout.css';
-import { MdOutlineMenu, MdDashboard } from 'react-icons/md';
-import { CgProfile } from 'react-icons/cg';
+import { MdDashboard } from 'react-icons/md';
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa6';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import DashboardHeader from './DashboardHeader';
