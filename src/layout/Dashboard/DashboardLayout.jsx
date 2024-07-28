@@ -4,24 +4,44 @@ import { MdDashboard } from 'react-icons/md';
 import { FaAngleDown, FaAngleRight } from 'react-icons/fa6';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import DashboardHeader from './DashboardHeader';
+import { FaCartArrowDown, FaCartPlus, FaUser } from 'react-icons/fa';
+import useLoggedInUser from '../../hooks/useLoggedInUser';
 
 const menuData = [
     {
         label: 'Dashboard',
         icon: <MdDashboard />,
         path: '/dashboard',
+        user_type: 'User',
+    },
+
+    {
+        label: 'Dashboard',
+        icon: <MdDashboard />,
+        path: '/dashboard',
+        user_type: 'Admin',
+    },
+
+    {
+        label: 'All Product',
+        icon: <FaCartArrowDown />,
+        path: '/dashboard/product',
+        user_type: 'User',
     },
     {
         label: 'User Setting',
-        icon: <MdDashboard />,
+        icon: <FaUser />,
+        user_type: 'Admin',
         submenu: [
             {
                 label: 'User',
                 path: '/dashboard/user',
+                user_type: 'Admin',
             },
             {
                 label: 'Role',
                 path: '/dashboard/role',
+                user_type: 'Admin',
             },
         ],
     },
@@ -37,6 +57,8 @@ const DashboardLayout = () => {
         left: 0,
         submenu: [],
     });
+
+    const [users, isLoading] = useLoggedInUser();
 
     const timeoutRef = useRef(null);
 
@@ -125,6 +147,11 @@ const DashboardLayout = () => {
         }, 1000);
     };
 
+    // menu data filter
+    const filteredMenuData = menuData.filter(
+        (item) => item.user_type === users?.role
+    );
+
     return (
         <div className="body">
             <div id="logo" className={isSmallMenu ? 'small-left-menu' : ''}>
@@ -136,7 +163,7 @@ const DashboardLayout = () => {
                 className={isSmallMenu ? 'small-left-menu' : ''}
             >
                 <ul>
-                    {menuData.map((item, index) => (
+                    {filteredMenuData.map((item, index) => (
                         <li
                             key={index}
                             className={`has-sub ${
@@ -198,11 +225,7 @@ const DashboardLayout = () => {
                                     }
                                     onMouseOut={handleMouseOut}
                                 >
-                                    <i>
-                                        {React.createElement(MdDashboard, {
-                                            className: item.icon,
-                                        })}
-                                    </i>
+                                    <i>{item.icon}</i>
                                     <span>{item.label}</span>
                                 </NavLink>
                             )}

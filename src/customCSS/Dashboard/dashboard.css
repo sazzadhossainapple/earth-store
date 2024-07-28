@@ -1,0 +1,43 @@
+/* profile css start */
+.profile-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.employee-profile-img {
+    display: flex;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid var(--primary-color);
+}
+.profile-text {
+    font-size: 14px;
+}
+.badge-info {
+    background-color: #74a84a;
+}
+
+/* profile css end */
+
+/* media query css start small device */
+
+@media only screen and (min-width: 250px) and (max-width: 575px) {
+    .profile-container {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .profile-container {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+}

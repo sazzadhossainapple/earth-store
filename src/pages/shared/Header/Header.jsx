@@ -8,6 +8,7 @@ import { FaSignInAlt } from 'react-icons/fa';
 
 import OffCanvas from '../../../components/OffCanvas/OffCanvas';
 import { AddCartContext } from '../../../context/cartContext/CartContext';
+import useLoggedInUser from '../../../hooks/useLoggedInUser';
 
 const Header = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,6 +21,7 @@ const Header = () => {
 
     const handleCloseOffcanvas = () => setShowOffcanvas(false);
     const handleShowOffcanvas = () => setShowOffcanvas(true);
+    const [users, isLoading] = useLoggedInUser();
 
     // scroll
     useEffect(() => {
@@ -128,6 +130,20 @@ const Header = () => {
                                 Contact
                             </NavLink>
                         </li>
+                        {users?.status === true && (
+                            <li className="nav-content-item">
+                                <NavLink
+                                    to="/dashboard"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? 'nav-link-active'
+                                            : 'nav-content-link'
+                                    }
+                                >
+                                    Dashboard
+                                </NavLink>
+                            </li>
+                        )}
                         <li className="nav-content-item">
                             <div className="header-icon-wrapper">
                                 <button
@@ -139,41 +155,43 @@ const Header = () => {
                                         {totalItemsInCart}
                                     </span>
                                 </button>
-                                <div
-                                    className="position-relative"
-                                    ref={dropdownRef}
-                                >
-                                    <button
-                                        className="border-0 bg-transparent"
-                                        type="button"
-                                        onClick={handleButtonClick}
+                                {!users?.status === true && (
+                                    <div
+                                        className="position-relative"
+                                        ref={dropdownRef}
                                     >
-                                        <MdPeopleAlt className="header-icon" />
-                                    </button>
+                                        <button
+                                            className="border-0 bg-transparent"
+                                            type="button"
+                                            onClick={handleButtonClick}
+                                        >
+                                            <MdPeopleAlt className="header-icon" />
+                                        </button>
 
-                                    {isDropdownVisible && (
-                                        <ul className="dropdown-content position-absolute shadow">
-                                            <li className="border-bottom">
-                                                <Link
-                                                    className="dropdown-item submenu-link d-flex align-items-center gap-2"
-                                                    to="/sign-in"
-                                                >
-                                                    <FaSignInAlt />
-                                                    <span> Sign In</span>
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    className="dropdown-item submenu-link d-flex align-items-center gap-2"
-                                                    to="/sign-up"
-                                                >
-                                                    <MdPeople />
-                                                    <span> Sign Up</span>
-                                                </Link>
-                                            </li>
-                                        </ul>
-                                    )}
-                                </div>
+                                        {isDropdownVisible && (
+                                            <ul className="dropdown-content position-absolute shadow">
+                                                <li className="border-bottom">
+                                                    <Link
+                                                        className="dropdown-item submenu-link d-flex align-items-center gap-2"
+                                                        to="/sign-in"
+                                                    >
+                                                        <FaSignInAlt />
+                                                        <span> Sign In</span>
+                                                    </Link>
+                                                </li>
+                                                <li>
+                                                    <Link
+                                                        className="dropdown-item submenu-link d-flex align-items-center gap-2"
+                                                        to="/sign-up"
+                                                    >
+                                                        <MdPeople />
+                                                        <span> Sign Up</span>
+                                                    </Link>
+                                                </li>
+                                            </ul>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </li>
                     </ul>
