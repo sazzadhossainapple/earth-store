@@ -5,6 +5,11 @@ import DashboardLayout from '../../layout/Dashboard/DashboardLayout';
 import Dashboard from '../../pages/Dashboard/Dashboard/Dashboard';
 import User from '../../pages/Dashboard/DashboardUserSetting/User/User';
 import Role from '../../pages/Dashboard/DashboardUserSetting/Role/Role';
+import PrivateRoutes from '../PrivateRoutes/PrivateRoutes';
+import AdminRoutes from '../AdminRoutes/AdminRoutes';
+import CustomerRoutes from '../CustomerRoutes/CustomerRoutes';
+import CustomerProduct from '../../pages/Dashboard/CustomerProduct/CustomerProduct';
+import DashboardProfile from '../../pages/Dashboard/DashboardProfile/DashboardProfile';
 const Checkout = lazy(() => import('../../pages/Checkout/Checkout'));
 const Cart = lazy(() => import('../../pages/Cart/Cart'));
 const Main = lazy(() => import('../../layout/Main/Main'));
@@ -59,12 +64,39 @@ export const router = createBrowserRouter([
 
     {
         path: '/dashboard',
-        element: <DashboardLayout />,
+        element: (
+            <PrivateRoutes>
+                <DashboardLayout />
+            </PrivateRoutes>
+        ),
         errorElement: <ErrorPage />,
         children: [
             { path: '/dashboard', element: <Dashboard /> },
-            { path: '/dashboard/user', element: <User /> },
-            { path: '/dashboard/role', element: <Role /> },
+            { path: '/dashboard/profile', element: <DashboardProfile /> },
+            {
+                path: '/dashboard/product',
+                element: (
+                    <CustomerRoutes>
+                        <CustomerProduct />
+                    </CustomerRoutes>
+                ),
+            },
+            {
+                path: '/dashboard/user',
+                element: (
+                    <AdminRoutes>
+                        <User />
+                    </AdminRoutes>
+                ),
+            },
+            {
+                path: '/dashboard/role',
+                element: (
+                    <AdminRoutes>
+                        <Role />
+                    </AdminRoutes>
+                ),
+            },
         ],
     },
 ]);
