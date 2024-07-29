@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useLoggedInUser from '../../../hooks/useLoggedInUser';
 import { FiEdit } from 'react-icons/fi';
 import image from '../../../assets/image/defualtImages.png';
+import UpdateProfile from './UpdateProfile';
 
 const DashboardProfile = () => {
-    const [users] = useLoggedInUser();
+    const [users, getLoggedInUser] = useLoggedInUser();
+    const [show, setShow] = useState(false);
+    const [userUpdate, setUserUpdate] = useState(null);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div className="bg-white rounded profile-container shadow">
             <div className="p-5">
-                <div className="employee-profile">
+                <div>
                     <img
                         src={
                             users?.image
@@ -20,18 +26,18 @@ const DashboardProfile = () => {
 
                                   image
                         }
-                        className="rounded-circle employee-profile-img mx-auto"
+                        className="rounded-circle user-profile-img mx-auto"
                         style={{ width: '140px', height: ' 140px' }}
                         alt=""
                     />
                     <div className="d-flex align-items-center justify-content-center mt-3">
                         <button
-                            // onClick={() => {
-                            //     handleShow();
-                            //     setUserUpdate(users);
-                            // }}
-                            className="btns d-flex align-items-center gap-2"
-                            // style={{ color: '#2c541d' }}
+                            onClick={() => {
+                                handleShow();
+                                setUserUpdate(users);
+                            }}
+                            className="btns d-flex align-items-center gap-2 bg-transparent border-0"
+                            style={{ color: '#2c541d' }}
                         >
                             <FiEdit className="add-icon" />{' '}
                             <span>Edit Profile</span>
@@ -80,13 +86,20 @@ const DashboardProfile = () => {
                                     Address:
                                 </th>
                                 <td className="profile-text">
-                                    {users?.employee?.address}
+                                    {users?.address ? users.address : 'N/A'}
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            <UpdateProfile
+                show={show}
+                handleClose={handleClose}
+                userUpdate={userUpdate}
+                setUserUpdate={setUserUpdate}
+                getUsers={getLoggedInUser}
+            />
         </div>
     );
 };
