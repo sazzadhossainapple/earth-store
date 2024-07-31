@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import useLoggedInUser from '../../../hooks/useLoggedInUser';
 import { FiEdit } from 'react-icons/fi';
-import image from '../../../assets/image/defualtImages.png';
+import Image from '../../../assets/image/defualtImages.png';
 import UpdateProfile from './UpdateProfile';
+import Loading from '../../../components/Loading/Loading';
 
 const DashboardProfile = () => {
-    const [users, getLoggedInUser] = useLoggedInUser();
+    const [users, isLoading, getLoggedInUser] = useLoggedInUser();
     const [show, setShow] = useState(false);
     const [userUpdate, setUserUpdate] = useState(null);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    if (isLoading) {
+        return <Loading />;
+    }
 
     return (
         <div className="bg-white rounded profile-container shadow">
@@ -19,12 +24,10 @@ const DashboardProfile = () => {
                     <img
                         src={
                             users?.image
-                                ? users?.image
-                                : // `${import.meta.env.VITE_API_KEY_URL}/assets/${
-                                  //       users?.image
-                                  //   }`
-
-                                  image
+                                ? `${import.meta.env.VITE_API_KEY_URL}/images/${
+                                      users?.image
+                                  }`
+                                : Image
                         }
                         className="rounded-circle user-profile-img mx-auto"
                         style={{ width: '140px', height: ' 140px' }}
@@ -98,7 +101,7 @@ const DashboardProfile = () => {
                 handleClose={handleClose}
                 userUpdate={userUpdate}
                 setUserUpdate={setUserUpdate}
-                getUsers={getLoggedInUser}
+                getLoggedInUser={getLoggedInUser}
             />
         </div>
     );

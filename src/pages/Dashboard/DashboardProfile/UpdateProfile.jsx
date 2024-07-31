@@ -11,7 +11,7 @@ const UpdateProfile = ({
     handleClose,
     userUpdate,
     setUserUpdate,
-    getUsers,
+    getLoggedInUser,
 }) => {
     const [imagePreview, setImagePreview] = useState(defaultImage);
     const [selectedFile, setSelectedFile] = useState(null);
@@ -31,7 +31,12 @@ const UpdateProfile = ({
                 phone: userUpdate.phone || '',
                 address: userUpdate.address || '',
             });
-            setImagePreview(userUpdate.image || defaultImage);
+            const userImageUrl = userUpdate.image
+                ? `${import.meta.env.VITE_API_KEY_URL}/images/${
+                      userUpdate.image
+                  }`
+                : defaultImage;
+            setImagePreview(userImageUrl);
         }
     }, [userUpdate, reset]);
 
@@ -57,9 +62,11 @@ const UpdateProfile = ({
         formData.append('name', data.name);
         formData.append('phone', data.phone);
         formData.append('address', data.address);
-        if (selectedFile) {
-            formData.append('image', selectedFile);
-        }
+        formData.append('file', selectedFile);
+
+        // for (const value of formData.values()) {
+        //     console.log(value);
+        // }
 
         const config = {
             headers: {
@@ -76,11 +83,12 @@ const UpdateProfile = ({
                 formData,
                 config
             );
-            if (res.status === 200) {
+            if (res.status) {
                 console.log(res);
-                getUsers(); // Refresh the user data after a successful update
+                getLoggedInUser(); // Refresh the user data after a successful update
                 toast.success('Profile updated successfully');
-                handleClose(); // Close the modal after successful update
+                reset();
+                handleModalClose();
             }
         } catch (error) {
             console.error(error);
@@ -88,6 +96,12 @@ const UpdateProfile = ({
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleModalClose = () => {
+        handleClose(); // Close the modal
+        setImagePreview(defaultImage); // Reset the image preview to default
+        setSelectedFile(null); // Clear the selected file
     };
 
     return (
