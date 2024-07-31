@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const {
@@ -12,6 +12,7 @@ const Register = () => {
     } = useForm();
 
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     //register
     const onSubmit = (data) => {
@@ -37,6 +38,7 @@ const Register = () => {
                     console.log(data);
                     toast.success('Account Created successfully');
                     reset();
+                    navigate('/sign-in');
                 }
             })
             .catch((error) => {

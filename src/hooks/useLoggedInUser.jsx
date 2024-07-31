@@ -10,7 +10,7 @@ const useLoggedInUser = () => {
     // get user
     useEffect(() => {
         getLoggedInUser();
-    }, []);
+    }, [token]);
 
     function getLoggedInUser() {
         if (token) {

@@ -1,3 +1,7 @@
+.form-label {
+    font-weight: 500;
+}
+
 /* profile css start */
 .profile-container {
     width: 50%;
@@ -46,6 +50,11 @@
     color: #74a84a !important;
 }
 
+.dashboard-title {
+    font-size: 24px;
+    color: #74a84a;
+    font-weight: 700;
+}
 
 /* profile css end */
 

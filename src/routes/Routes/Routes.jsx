@@ -10,6 +10,7 @@ import AdminRoutes from '../AdminRoutes/AdminRoutes';
 import CustomerRoutes from '../CustomerRoutes/CustomerRoutes';
 import CustomerProduct from '../../pages/Dashboard/CustomerProduct/CustomerProduct';
 import DashboardProfile from '../../pages/Dashboard/DashboardProfile/DashboardProfile';
+import ChangePassword from '../../pages/Dashboard/DashboardProfile/ChangePassword';
 const Checkout = lazy(() => import('../../pages/Checkout/Checkout'));
 const Cart = lazy(() => import('../../pages/Cart/Cart'));
 const Main = lazy(() => import('../../layout/Main/Main'));
@@ -73,6 +74,7 @@ export const router = createBrowserRouter([
         children: [
             { path: '/dashboard', element: <Dashboard /> },
             { path: '/dashboard/profile', element: <DashboardProfile /> },
+            { path: '/dashboard/change-password', element: <ChangePassword /> },
             {
                 path: '/dashboard/product',
                 element: (
