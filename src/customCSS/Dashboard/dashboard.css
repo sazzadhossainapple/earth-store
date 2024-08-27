@@ -1,77 +1,124 @@
 .form-label {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 /* profile css start */
 .profile-container {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
 }
 
 .user-profile-img {
-    display: flex;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    object-position: top;
-    border: 2px double #74a84a;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: top;
+  border: 2px double #74a84a;
 }
 .profile-text {
-    font-size: 14px;
+  font-size: 14px;
 }
 .badge-info {
-    background-color: #74a84a;
+  background-color: #74a84a;
 }
 .user-img-container {
-    border: 3px dashed #74a84a;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    /* padding: 5px; */
+  border: 3px dashed #74a84a;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding: 5px; */
 }
 .updated-img {
-    width: 192px;
-    height: 192px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }
 .text-model-title {
-    font-size: 20px !important;
-    color: #74a84a !important;
+  font-size: 20px !important;
+  color: #74a84a !important;
 }
 
 .dashboard-title {
-    font-size: 24px;
-    color: #74a84a;
-    font-weight: 700;
+  font-size: 24px;
+  color: #74a84a;
+  font-weight: 700;
 }
 
 /* profile css end */
 
+/* dashboard css start */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.chart-gird {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.left-chart {
+  width: 50%;
+}
+.right-chart {
+  width: 50%;
+}
+.salse-title {
+  font-size: 16px;
+  margin-bottom: 10px !important;
+  font-weight: 500;
+}
+.chart-title {
+  font-size: 28px;
+  color: #2c541d;
+  font-weight: 700;
+}
+.chart-header {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+/* dashboard css end */
+
 /* media query css start small device */
 
 @media only screen and (min-width: 250px) and (max-width: 575px) {
-    .profile-container {
-        width: 100%;
-    }
+  .profile-container {
+    width: 100%;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-    .profile-container {
-        width: 100%;
-    }
+  .profile-container {
+    width: 100%;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
