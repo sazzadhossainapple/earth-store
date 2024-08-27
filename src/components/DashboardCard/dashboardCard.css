@@ -1,0 +1,33 @@
+.dashboard-card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.icon-card {
+  height: 40px;
+  width: 40px;
+  background-color: #f0eef8;
+  font-size: 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard-card-small-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4e4e4e;
+  margin-bottom: 4px !important;
+}
+.dashboard-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222222;
+}
+.dashboard-card-count-date {
+  font-size: 14px;
+  color: #7a7a7a;
+}
